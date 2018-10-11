@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/index.css"> 
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Ricky">
+        <meta name="description" content="wp2018-week3-exercise">
+        <title>wp2018-w3</title>
+    </head>    
+
+    <body>
+        <div id="wp2018_hw">
+            <div class = "upperblock">
+                <p><span class="btn" id="back">&larr;</span><img draggable="false" class="btn" id="shopping_car" src="./image/shopping.png"><b>ProductInfo</b></p>    
+            </div>
+            <div class = "mainblock">
+
+                <!-- add comment to remove the inline-block default margin 4px-->
+                <div class = "bg_slide">
+                    <img id = "bg1" alt="bg1" draggable="false" src="./image/combg.png"><!--
+                 --><img id = "bg2" alt="bg2" draggable="false" src="./image/combg2.png"><!--
+                 --><img id = "bg3" alt="bg3" draggable="false" src="./image/combg3.png">
+                </div>
+
+                <div class = "p_image_slide">
+                    <img class ="product_img" alt="pd1" draggable="false" src="./image/uno.png"><!--
+                    --><img class ="product_img" alt="pd2" draggable="false" src="./image/mega2560.png"><!--
+                    --><img class ="product_img" alt="pd3" draggable="false" src="./image/yun.png">
+                </div>
+                
+                <div class = "p_describe_slide">
+                    <div class = "p_describe" id="p1">
+                        <h2  class = "describe">Arduino uno</h2>
+                        <p   class = "describe">The UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.</p>
+                        <h1  class = "describe">$22.00 tax not included</h1>
+                        <img class = "btn_add" alt="add to cart" draggable="false" src="./image/add.png">    
+                    </div><!--
+                 --><div class = "p_describe" id="p2">
+                        <h2  class = "describe">Arduino mega2560</h2>
+                        <p   class = "describe">The MEGA 2560 is designed for more complex projects. With 54 digital I/O pins, 16 analog inputs and a larger space for your sketch it is the recommended board for 3D printers and robotics projects. This gives your projects plenty of room and opportunities.</p>
+                        <h1  class = "describe">$38.50 tax not included</h1>
+                        <img class = "btn_add" alt="add to cart" draggable="false" src="./image/add.png">      
+                    </div><!--
+                 --><div class = "p_describe" id="p3">
+                        <h2  class = "describe">Arduino YÚN REV 2</h2>
+                        <p   class =  "describe">The Yún rev. 2 with the power of a Linux based system that enables advanced network connections and applications. As always, every element of the platform – hardware, software and documentation – is freely available and open-source on the Arduino official website. </p>
+                        <h1  class = "describe">$59.00 tax not included</h1>
+                        <img class = "btn_add" alt="add to cart" draggable="false" src="./image/add.png">    
+                    </div>
+                </div>
+            </div>
+            <div class = "lowerblock">
+                <span class="btn" id="switch_left" >&#9664;</span>
+                <span class="btn" id="switch_right">&#9654;</span>
+            </div>
+        </div>
+    </body>
+    <script src="./script/index.js"></script>
+</html>

@@ -1,0 +1,67 @@
+// if you edit your js file,
+//   make sure your browser does not cache it
+
+$('#ajax-form button[type=submit]').click((event) => {
+  event.preventDefault()
+  // no need if button type is not `submit`,
+  //   but make it work without ajax is a good practice
+  
+  $.get('ajax.php', {
+    fname: $('#ajax-form input[name=fname]').val(),
+    lname: $('#ajax-form input[name=lname]').val(),
+  }, (data) => {
+    $('#ajax-output').html(data)
+  })
+  setTimeout(() => $('#ajax-output').html('loading'), 3000)
+  
+
+  // try to modify the timeout
+})
+
+$('#list_all').click((event) => {
+  event.preventDefault()
+  $.ajax('ajax.php',{
+    method: "get",
+    data:{'func':'list','ID':'ALL'},
+    success: function(data) {
+      $("#list_students").html(data);
+    }
+  })
+})
+
+$('#search').click((event) => {
+  var Std_ID = document.getElementById('search_box').value;
+  event.preventDefault()
+  $.ajax('ajax.php',{
+    method: "get",
+    data:{'func':'list','ID': Std_ID},
+    success: function(data) {
+      $("#search_students").html(data);
+    }
+  })
+})
+
+$('#add').click((event) => {
+  var Std_ID = document.getElementById('add_ID_box').value;
+  var Std_name = document.getElementById('add_name_box').value;
+  event.preventDefault()
+  $.ajax('ajax.php',{
+    method: "post",
+    data:{'func':'add','ID': Std_ID,'name': Std_name},
+    success: function(data){
+      $("#add_students").html(data);
+    }
+  })
+})
+
+$('#delete').click((event) => {
+  var Std_ID = document.getElementById('delete_box').value;
+  event.preventDefault();
+  $.ajax('ajax.php',{
+    method: "post",
+    data:{'func':'del','ID':Std_ID},
+    success:function(data){
+      $('#delete_students').html(data);
+    }
+  })
+})
