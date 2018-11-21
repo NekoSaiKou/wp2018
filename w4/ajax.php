@@ -22,7 +22,8 @@
     function list_all() {
         global $student;
         foreach ($student as $key => $value) {
-            echo '"'.$key.'":"'.$value.'"<br>';
+            $echo_data =  htmlspecialchars( '"'.$key.'":"'.$value.'"' , ENT_QUOTES ,'UTF-8');
+            echo $echo_data.'<br>';
         }
     }
 
@@ -32,7 +33,7 @@
         global $value;
         foreach ($student as $key => $value){
             if($key == $ID){
-                echo 'Hello,'.$value;
+                echo  htmlspecialchars('Hello,'.$value, ENT_QUOTES, 'UTF-8');
                 return;
             }
         }
